@@ -34,7 +34,7 @@ public class CalculatorUtilsTest {
         Assertions.assertThrows(
                 RuntimeException.class,
                 () -> CalculatorUtils.add("1,-2,-4,-9,9"),
-                "negative numbers are not supported"
+                "negatives not allowed"
         );
 
     }

@@ -21,7 +21,7 @@ public class CalculatorUtils {
         StringBuilder stringBuilder = new StringBuilder();
         numbers.stream().filter(x -> x < 0).forEach(x -> stringBuilder.append(x).append(" "));
         if (!stringBuilder.toString().isEmpty()) {
-            throw new RuntimeException("negative numbers are not supported" + stringBuilder);
+            throw new RuntimeException("negatives not allowed" + stringBuilder);
         }
     }
 
