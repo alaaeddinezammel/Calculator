@@ -1,10 +1,12 @@
+package craft.calculator;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class Calculator {
+public class CalculatorUtils {
 
     public static int add(String numbersAsString) {
         if (!numbersAsString.isEmpty()) {
@@ -19,7 +21,7 @@ public class Calculator {
         StringBuilder stringBuilder = new StringBuilder();
         numbers.stream().filter(x -> x < 0).forEach(x -> stringBuilder.append(x).append(" "));
         if (!stringBuilder.toString().isEmpty()) {
-            throw new RuntimeException("negative numbers are not supported" + stringBuilder.toString());
+            throw new RuntimeException("negative numbers are not supported" + stringBuilder);
         }
     }
 
@@ -37,6 +39,6 @@ public class Calculator {
             }
             throw new RuntimeException("delimiter not supported");
         }
-        return input.split(",|\n");
+        return input.split("[,\n]");
     }
 }
